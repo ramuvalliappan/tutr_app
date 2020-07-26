@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BadgeScreen extends StatefulWidget {
+class BadgesScreen extends StatefulWidget {
   @override
-  _BadgeScreenState createState() => _BadgeScreenState();
+  _BadgesScreenState createState() => _BadgesScreenState();
 }
 
-class _BadgeScreenState extends State<BadgeScreen> {
+class _BadgesScreenState extends State<BadgesScreen> {
   @override
   Widget build(BuildContext context) {
     return Container();
