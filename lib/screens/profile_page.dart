@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:tutr_app/screens/chat_page.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -19,17 +20,20 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Container(
+          width: MediaQuery
+              .of(context)
+              .size
+              .width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: 25.0,),
               Container(
                 child: Image.asset(
                     'assets/profile_picture.webp', fit: BoxFit.cover),
-                height: 100.0,
-                width: 100.0,
+                height: 300.0,
+                width: 300.0,
               ),
               SizedBox(height: 20,),
               SmoothStarRating(
@@ -40,12 +44,12 @@ class ProfilePage extends StatelessWidget {
                   starCount: 5,
                   rating: rating,
                   size: 40.0,
-                  isReadOnly:false,
+                  isReadOnly: false,
                   //fullRatedIconData: Icons.blur_off,
                   //halfRatedIconData: Icons.blur_on,
                   color: Colors.yellow,
                   borderColor: Colors.yellow,
-                  spacing:0.0
+                  spacing: 0.0
               ),
               /*
               Container(
@@ -57,26 +61,35 @@ class ProfilePage extends StatelessWidget {
               ),
               */
 
-              Text('Peter Johnson', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),),
+              Text('Peter Johnson',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),),
               SizedBox(height: 20.0,),
-              Text('Skills: Math', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
-              Text('Physics Education: 3rd year mechanical \n engineering student at Stanford University', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
-              Text('\$35 USD per hour', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
+              Text('Skills: Math',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
+              Text(
+                'Physics Education: 3rd year mechanical \n engineering student at Stanford University',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
+              Text('\$35 USD per hour',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),),
               SizedBox(height: 20,),
 
               FlatButton.icon(
-              onPressed: () {},
+                onPressed: () {},
                 icon: Icon(
                     Icons.chat),
                 label: Text(
                     'Hire Me'
                 ),
               ),
-            ]
-        ),
-      ),
+              GestureDetector(
+                onTap: () =>
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => chat_page())),
+              )
+            ],
+          ),
+        )
     );
   }
 }
-
 
