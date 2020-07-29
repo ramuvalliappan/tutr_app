@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutr_app/screens/profile_page.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -86,19 +87,22 @@ class _SignInScreenState extends State<SignInScreen> {
                             SizedBox(
                               height: 40,
                             ),
-                            Container(
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50),
-                                    color: Colors.green[900]),
-                                //color: Color(0xff42f572)),
-                                child: Center(
-                                    child: Text(
-                                  "Sign In",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ))),
+                            GestureDetector(
+                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ProfilePage())),
+                              child: Container(
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: Colors.green[900]),
+                                  //color: Color(0xff42f572)),
+                                  child: Center(
+                                      child: Text(
+                                    "Sign In",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ))),
+                            ),
                             SizedBox(
                               height: 40,
                             ),
