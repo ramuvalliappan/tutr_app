@@ -93,9 +93,4 @@ class _SchedulePageState extends State<SchedulePage> {
   }
 }
 
-class InkWell extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+
