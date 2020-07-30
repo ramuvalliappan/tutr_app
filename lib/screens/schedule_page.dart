@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatefulWidget {
@@ -6,7 +7,7 @@ class SchedulePage extends StatefulWidget {
 }
 
 class _SchedulePageState extends State<SchedulePage> {
-  bool selectDate = false;
+  bool _selectDate = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,34 +43,59 @@ class _SchedulePageState extends State<SchedulePage> {
                     ),
                   ],
                 ),
-                Column(
-                  children: <Widget>[
-                    Text(
-                        'Mo',
-                        style: TextStyle(
-                        color: Colors.lightBlueAccent
-                    )
-                    ),
-                    Text(
-                        '3',
-                        style: TextStyle(
-                        color: Colors.lightBlueAccent
-                    )
-                    ),
-                    Container(
-                      width: 4.0,
-                      height: 4.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                            color: Colors.lightBlueAccent
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      _selectDate = !_selectDate;
+                    });
+                  },
+                  child: Container(
+                    decoration: _selectDate
+                        ? null
+                        : BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(4.0),
                       ),
                     ),
-                  ],
+                    padding: EdgeInsets.all(8.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                            'Mo',
+                            style: TextStyle(
+                            color: _selectDate ? Colors.white : Colors.lightBlueAccent
+                        )
+                        ),
+                        Text(
+                            '3',
+                            style: TextStyle(
+                            color: _selectDate ? Colors.white : Colors.lightBlueAccent
+                        )
+                        ),
+                        Container(
+                          width: 4.0,
+                          height: 4.0,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                                color: _selectDate ? Colors.white : Colors.lightBlueAccent
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
           )
       ),
     );
+  }
+}
+
+class InkWell extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
