@@ -1,8 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:tutr_app/screens/schedule_page2.dart';
+import 'package:tutr_app/screens/chat.screen.dart';
+
+import 'chat_screen.dart';
+
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -28,7 +29,16 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 25.0,),
+              SizedBox(height: 15.0,),
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back_ios),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  Spacer(),
+                ],
+              ),
               Container(
                 child: Image.asset(
                     'assets/profile_picture.webp', fit: BoxFit.cover),
@@ -74,19 +84,22 @@ class ProfilePage extends StatelessWidget {
               SizedBox(height: 20,),
 
               FlatButton.icon(
-                onPressed: () {},
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ChatScreen())),
                 icon: Icon(
                     Icons.chat),
                 label: Text(
                     'Hire Me'
                 ),
               ),
+
+              /*
               GestureDetector(
                 onTap: () =>
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => chat_page())),
-              )
+                        MaterialPageRoute(builder: (_) => ChatScreen())),
+              ),*/
             ],
+
           ),
         )
     );

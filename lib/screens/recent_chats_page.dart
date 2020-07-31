@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/models/message_model.dart';
-import 'package:flutter_chat_ui/screens/chat_screen.dart';
+
+import 'chat.screen.dart';
+import 'message_model.dart';
 
 class RecentChats extends StatelessWidget {
   @override
@@ -24,6 +25,7 @@ class RecentChats extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               final Message chat = chats[index];
               return GestureDetector(
+                /*
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -31,7 +33,8 @@ class RecentChats extends StatelessWidget {
                       user: chat.sender,
                     ),
                   ),
-                ),
+                ),*/
+
                 child: Container(
                   margin: EdgeInsets.only(top: 5.0, bottom: 5.0, right: 20.0),
                   padding:

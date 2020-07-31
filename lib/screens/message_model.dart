@@ -1,4 +1,6 @@
-import 'package:flutter_chat_ui/models/user_model.dart';
+
+
+import 'package:flutter/material.dart';
 
 class Message {
   final User sender;
@@ -120,51 +122,54 @@ List<Message> chats = [
 // EXAMPLE MESSAGES IN CHAT SCREEN
 List<Message> messages = [
   Message(
-    sender: james,
-    time: '5:30 PM',
-    text: 'Hey, how\'s it going? What did you do today?',
-    isLiked: true,
-    unread: true,
-  ),
-  Message(
     sender: currentUser,
     time: '4:30 PM',
-    text: 'Just walked my doge. She was super duper cute. The best pupper!!',
+    text: 'Hi, Peter, can I set up a math tutoring session with you?',
     isLiked: false,
     unread: true,
   ),
+
   Message(
     sender: james,
-    time: '3:45 PM',
-    text: 'How\'s the doggo?',
-    isLiked: false,
-    unread: true,
-  ),
-  Message(
-    sender: james,
-    time: '3:15 PM',
-    text: 'All the food',
+    time: '5:30 PM',
+    text: 'Yeah sure, it\'ll be \$35 per hour',
     isLiked: true,
+    unread: true,
+  ),
+
+  Message(
+    sender: currentUser,
+    time: '5:34 PM',
+    text: 'Great, what time can we schedule our meeting for?',
+    isLiked: false,
+    unread: true,
+  ),
+
+  Message(
+    sender: james,
+    time: '5:40 PM',
+    text: 'How\'s 3:00 pm tomorrow?',
+    isLiked: false,
     unread: true,
   ),
   Message(
     sender: currentUser,
-    time: '2:30 PM',
-    text: 'Nice! What kind of food did you eat?',
-    isLiked: false,
+    time: '6:00 PM',
+    text: 'Sure, sounds great',
+    isLiked: true,
     unread: true,
   ),
   Message(
     sender: james,
-    time: '2:00 PM',
-    text: 'I ate so much food today.',
+    time: '6:12 PM',
+    text: 'Awesome, I\'ll send the zoom link then!',
     isLiked: false,
     unread: true,
   ),
 ];
 
 
-User_model.dart
+//User_model.dart;
 
 class User {
   final int id;
@@ -178,12 +183,6 @@ class User {
   });
 }
 
-
-Chat_screen.dart
-
-import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/models/message_model.dart';
-import 'package:flutter_chat_ui/models/user_model.dart';
 
 class ChatScreen extends StatefulWidget {
   final User user;

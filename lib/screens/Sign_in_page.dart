@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutr_app/main.dart';
 import 'package:tutr_app/screens/profile_page.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -88,7 +89,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               height: 40,
                             ),
                             GestureDetector(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ProfilePage())),
+                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MyStatefulWidget())),
                               child: Container(
                                   height: 50,
                                   decoration: BoxDecoration(

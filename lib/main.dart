@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tutr_app/screens/Sign_in_page.dart';
+import 'package:tutr_app/screens/chat.screen.dart';
+import 'package:tutr_app/screens/chat_screen.dart';
+import 'package:tutr_app/screens/home_page.dart';
+import 'package:tutr_app/screens/profile_page.dart';
+import 'package:tutr_app/screens/schedule_page.dart';
+import 'package:tutr_app/screens/search_result_page.dart';
 
 
 void main() => runApp(MyApp());
@@ -11,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: SignInScreen(),
     );
   }
 }
@@ -27,19 +34,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Insert Tutor list here',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+  List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    SearchPage(),
+    ScheduleScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -52,7 +50,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        automaticallyImplyLeading: false,
+        title: const Text('Tutr App'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -69,7 +68,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            title: Text('School'),
+            title: Text('Schedule'),
           ),
         ],
         currentIndex: _selectedIndex,

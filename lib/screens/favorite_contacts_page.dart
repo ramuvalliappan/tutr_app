@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/models/message_model.dart';
-import 'package:flutter_chat_ui/screens/chat_screen.dart';
+
+import 'chat.screen.dart';
+import 'message_model.dart';
 
 class FavoriteContacts extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,14 +44,14 @@ class FavoriteContacts extends StatelessWidget {
               itemCount: favorites.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
+                  /*
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => ChatScreen(
-                        user: favorites[index],
-                      ),
+                      builder: (_) => ChatScreen(),
                     ),
                   ),
+                  */
                   child: Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Column(
