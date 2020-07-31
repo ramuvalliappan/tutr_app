@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:tutr_app/screens/chat_page.dart';
+import 'package:tutr_app/screens/schedule_page2.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
